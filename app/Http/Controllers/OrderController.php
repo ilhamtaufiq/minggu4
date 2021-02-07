@@ -147,7 +147,7 @@ class OrderController extends Controller
     public function index(Request $request)
     {
         $customers = Customer::orderBy('name', 'ASC')->get();
-        $users = User::role('kasir')->orderBy('name', 'ASC')->get();
+        $users = User::orderBy('name', 'ASC')->get();
         $orders = Order::orderBy('created_at', 'DESC')->with('order_detail', 'customer');
 
         if (!empty($request->customer_id)) {

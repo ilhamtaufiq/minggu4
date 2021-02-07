@@ -12,11 +12,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name' => 'Daengweb',
-            'email' => 'admin@daengweb.id',
-            'password' => bcrypt('secret'),
-            'status' => true
-        ]);
+
+        $user = User::create([ 'name' => 'Admin', 'email' => 'admin@admin.com', 'password' => bcrypt('password'), 'created_at' => '2019-05-28 04:45:27', 'updated_at' => '2019-05-28 04:45:27' ]); $user->assignRole('admin');
+
     }
 }
